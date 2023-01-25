@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 124px 0;
+
+
+  .list {
+    display: grid;
+    grid-gap: 60px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 921px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 700px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 460px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    .list-item {
+      width: 100%;
+      max-width: 150px;
+      height: 150px;
+      background-color: #F0F2F5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      }
+
+      &__title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #32343C;
+      }
+    }
+
+    // details view
+    .list-item-container {
+      width: 100%;
+      max-width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px;
+      cursor: pointer;
+
+      .list-item {
+        background-color: #F0F2F5;
+        border-radius: 8px;
+        padding: 0;
+
+        img {
+          border-radius: 8px;
+        }
+
+        &:hover {
+          &:hover {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+          }
+        }
+      }
+
+      .photo-title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #838690;
+        margin-top: 10px;
+      }
+    }
+  }
+}
