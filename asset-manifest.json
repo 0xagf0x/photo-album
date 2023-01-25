@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/photo-album/static/css/main.aa84e3e5.css",
+    "main.js": "/photo-album/static/js/main.1275f6fc.js",
+    "static/js/787.41a659b2.chunk.js": "/photo-album/static/js/787.41a659b2.chunk.js",
+    "index.html": "/photo-album/index.html",
+    "main.aa84e3e5.css.map": "/photo-album/static/css/main.aa84e3e5.css.map",
+    "main.1275f6fc.js.map": "/photo-album/static/js/main.1275f6fc.js.map",
+    "787.41a659b2.chunk.js.map": "/photo-album/static/js/787.41a659b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa84e3e5.css",
+    "static/js/main.1275f6fc.js"
+  ]
+}
