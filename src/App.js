@@ -47,7 +47,7 @@ function PhotoAlbum() {
             title="Album Title"
           />
           <div className='container'>
-            <ul className="list">
+            <ul className="container__list">
               {photos.map(photo => (
                 // console.log('photo', photo),
                 <li key={photo.id} className="list-item-container">
@@ -57,7 +57,7 @@ function PhotoAlbum() {
                       handleModal()
                     }} />
                   </div>
-                  <h3 className='photo-title'>{photo.title}</h3>
+                  <h3 className='list-item__title'>{photo.title}</h3>
                 </li>
               ))}
             </ul>
@@ -69,7 +69,7 @@ function PhotoAlbum() {
             title="Photo Albums"
           />
           <div className='container'>
-             <ul className="list">
+             <ul className="container__list">
               {photoAlbums.map(album => (
                 <li key={album.id} className="list-item" onClick={() => setSelectedAlbum(album.id)}>
                   <h3 className='list-item__title'>{album.title}</h3>
