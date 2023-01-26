@@ -23,6 +23,10 @@ function PhotoAlbum() {
     }
   }, [selectedAlbum]);
 
+  const handleBackBtn = () => {
+    setSelectedAlbum(false);
+  }
+
   const handleModal = () => {
     const modal = document.querySelector('.js-modal');
     if (!modal.classList.contains('d-block')) {
@@ -47,6 +51,7 @@ function PhotoAlbum() {
             title="Album Title"
           />
           <div className='container'>
+            <button className="home-btn" onClick={handleBackBtn}>Return Home</button>
             <ul className="container__list">
               {photos.map(photo => (
                 // console.log('photo', photo),

@@ -6,10 +6,22 @@
 .container {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 124px 0;
+  margin-top: 124px;
 
+  .home-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 32px;
+
+    &:hover {
+      color: blue;
+    }
+  }
 
   &__list {
     display: grid;
