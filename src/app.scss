@@ -2,6 +2,18 @@
   margin: 0;
   padding: 0;
 }
+.pagination-container {
+  display: flex;
+  align-items: center;
+
+  .text {
+    margin: 0 20px;
+  }
+
+  button {
+    padding: 10px;
+  }
+}
 
 .container {
   width: 100%;

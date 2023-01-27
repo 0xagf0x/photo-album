@@ -8,6 +8,10 @@ function PhotoAlbum() {
   const [photos, setPhotos] = useState([]);
   const [selectedAlbum, setSelectedAlbum] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showFirstSet, setShowFirstSet] = useState(null);
+  const [showSecondSet, setShowSecondSet] = useState(null);
+  const [originalList, setOriginalList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
   
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/albums')
@@ -19,8 +23,14 @@ function PhotoAlbum() {
     if (selectedAlbum) {
       fetch(`https://jsonplaceholder.typicode.com/albums/${selectedAlbum}/photos`)
         .then(response => response.json())
-        .then(data => setPhotos(data.slice(0, 16)));
+        .then(data => {
+          setPhotos(data)
+          setOriginalList(data);
+          console.log('originalList', originalList);
+        })
     }
+    
+   
   }, [selectedAlbum]);
 
   const handleBackBtn = () => {
@@ -43,6 +53,25 @@ function PhotoAlbum() {
     }
   }
 
+  const handlePrev = () => {
+    console.log("Prev originalList", originalList)
+    if (currentPage === 1) {
+      return;
+    }
+    let currPage = currentPage - 1;
+    setCurrentPage(currPage);
+    setPhotos(originalList.slice((currPage - 1) * 16, (currPage * 16) - 1));
+  }
+
+  const handleNext = () => {
+    if (currentPage >= originalList.length / 16) {
+      return;
+    }
+    let currPage = currentPage + 1;
+    setCurrentPage(currPage);
+    setPhotos(originalList.slice((currPage - 1) * 16, (currPage * 16) - 1));
+  }
+
   return (
     <div>
       {selectedAlbum ? (
@@ -51,6 +80,12 @@ function PhotoAlbum() {
             title="Album Title"
           />
           <div className='container'>
+            <div className='pagination-container'>
+              <button onClick={handlePrev}>Previous</button>
+              <p className="text">Total Photos: {originalList.length}</p>
+              <p className="text">{currentPage}</p>
+              <button onClick={handleNext}>Next</button>
+              </div>
             <button className="home-btn" onClick={handleBackBtn}>Return Home</button>
             <ul className="container__list">
               {photos.map(photo => (
