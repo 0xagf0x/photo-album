@@ -8,8 +8,6 @@ function PhotoAlbum() {
   const [photos, setPhotos] = useState([]);
   const [selectedAlbum, setSelectedAlbum] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [showFirstSet, setShowFirstSet] = useState(null);
-  const [showSecondSet, setShowSecondSet] = useState(null);
   const [originalList, setOriginalList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   
@@ -29,8 +27,6 @@ function PhotoAlbum() {
           console.log('originalList', originalList);
         })
     }
-    
-   
   }, [selectedAlbum]);
 
   const handleBackBtn = () => {
